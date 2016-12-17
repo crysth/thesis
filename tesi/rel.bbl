@@ -1,0 +1,90 @@
+\begin{thebibliography}{GVSZ14}
+
+\bibitem[{Bja}]{cpp}
+{Bjarne Stroustrup}.
+\newblock C++ programming language.
+\newblock \url{http://www.stroustrup.com/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[{Bri}]{awk}
+{Alfred Aho}~{Peter Weinberger} {Brian Kernighan}.
+\newblock Awk programming language.
+\newblock \url{http://cm.bell-labs.com/cm/cs/awkbook/index.html}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[Git]{gitpac}
+GitHub.
+\newblock People and repositories on github.
+\newblock \url{https://github.com/about/press}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[GN00]{gvpr}
+Emden~R. Gansner and Stephen~C. North.
+\newblock An open graph visualization system and its applications to software
+  engineering.
+\newblock {\em Software - Practice and experience}, 30(11):1203--1233, 2000.
+
+\bibitem[{Gui}]{python}
+{Guido van Rossum}.
+\newblock Python programming language.
+\newblock \url{https://www.python.org/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[GVSZ14]{gitworld}
+Georgios Gousios, Bogdan Vasilescu, Alexander Serebrenik, and Andy Zaidman.
+\newblock Lean ghtorrent: Github data on demand.
+\newblock In {\em Proceedings of the 11th Working Conference on Mining Software
+  Repositories}, MSR 2014, pages 384--387, New York, NY, USA, 2014. ACM.
+
+\bibitem[{Lin}]{git}
+{Linus Torvalds}.
+\newblock git.
+\newblock \url{http://git-scm.com/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[MWe]{gitwir}
+Cade Metz (Wired~editor).
+\newblock Github conquered google, microsoft and everyone else.
+\newblock
+  \url{http://www.wired.com/2015/03/github-conquered-google-microsoft-everyone-else/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[{PJ }]{gith}
+{Tom Preston-Werner}~{Chris Wanstrath} {PJ Hyett}.
+\newblock Github.
+\newblock \url{https://github.com/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[PM13]{pangmaslov}
+Tin~Yau Pang and Sergei Maslov.
+\newblock Universal distribution of component frequencies in biological and
+  technological systems.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  110(15):6235--6239, 2013.
+
+\bibitem[{Sun}]{java}
+{James Gosling} {Sun Microsystems}.
+\newblock Java programming language.
+\newblock \url{http://www.oracle.com/technetwork/java/index.html}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[TGP89]{yoyo}
+David~H. Taenzer, Murthy Ganti, and Sunil Podar.
+\newblock Problems in object-oriented software reuse.
+\newblock In {\em {ECOOP} '89: Proceedings of the Third European Conference on
+  Object-Oriented Programming, Nottingham, UK, July 10-14, 1989.}, pages
+  25--38, 1989.
+
+\bibitem[vH]{doxy}
+Dimitri van Heesch.
+\newblock Doxygen.
+\newblock \url{http://www.stack.nl/~dimitri/doxygen/}.
+\newblock Accessed: 2015-04-06.
+
+\bibitem[{Wol}]{math}
+{Wolfam Research}.
+\newblock Mathematica.
+\newblock \url{http://www.wolfram.com/mathematica/}.
+\newblock Accessed: 2015-04-06.
+
+\end{thebibliography}

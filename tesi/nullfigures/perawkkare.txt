@@ -1,0 +1,32 @@
+#depth 9= grafico fino a 8!
+
+
+NCOL=`awk 'END{print NF}' 00500.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' 00500.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonnes.dat
+awk '$2==9{print $1}' colonnes.dat | grep -o '\b[0-9]*[02468]\b'
+
+
+NCOL=`awk 'END{print NF}' RlevVSoutdmean.cpp.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' RlevVSoutdmean.cpp.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonnec.dat
+awk '$2==9{print $1}' colonnec.dat | grep -o '\b[0-9]*[02468]\b'
+
+
+NCOL=`awk 'END{print NF}' RlevVSoutdmean.java.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' RlevVSoutdmean.java.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonnej.dat
+awk '$2==6{print $1}' colonnej.dat | grep -o '\b[0-9]*[02468]\b'
+
+
+NCOL=`awk 'END{print NF}' RlevVSoutdmean.py.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' RlevVSoutdmean.py.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonnep.dat
+awk '$2==9{print $1}' colonnep.dat | grep -o '\b[0-9]*[02468]\b'
+
+
+NCOL=`awk 'END{print NF}' RlevVSoutdmean.yul.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' RlevVSoutdmean.yul.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonney.dat
+awk '$2==9{print $1}' colonney.dat | grep -o '\b[0-9]*[02468]\b'
+
+
+NCOL=`awk 'END{print NF}' RlevVSoutdmean.rus.dat`
+for i in `seq 1 $NCOL`; do echo -ne $i "\t"; awk -v cont=$i '{print $cont}' RlevVSoutdmean.rus.dat | grep -n -m1 NaN | cut -f1 -d:; done > colonner.dat
+awk '$2==9{print $1}' colonner.dat | grep -o '\b[0-9]*[02468]\b'
+

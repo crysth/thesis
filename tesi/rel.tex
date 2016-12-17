@@ -1,0 +1,225 @@
+\documentclass[12pt, a4paper,titlepage,openright,twoside]{report}
+\usepackage[english]{babel}%divisione in sillabe
+\usepackage[utf8]{inputenc}%caratteri accentati
+\frenchspacing%spaziatura latina
+%\usepackage[Glenn]{fncychap}
+%\usepackage[T1]{fontenc}
+%\usepackage[Lenny]{fncychap}
+%\ChNameVar{\fontsize{14}{16}\usefont{T1}{cmr}{m}{n}\selectfont}
+%\ChNumVar{\fontsize{60}{62}\usefont{T1}{cmr}{m}{n}\selectfont\color{black}}
+%\ChTitleVar{\Huge\bfseries\rm}
+% \ChRuleWidth{1pt}
+\usepackage{fancyhdr}
+\usepackage{color}%altri di LyX
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{graphicx}%altri di cri
+\usepackage{amsmath,enumerate,rotate}
+\usepackage{epsfig}
+\usepackage[width=125mm]{caption}
+\usepackage{subfig}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{xcolor,calc, blindtext}
+\usepackage{cite}
+%\usepackage{url}
+%\Urlmuskip=0mu plus 1mu
+%\usepackage{kpfonts}
+%\setSingleSpace{1.1}
+%\SingleSpacing
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{breakurl}
+\usepackage{listings}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%##############################################################################################################################
+\newcommand{\comment}[1]{}
+\renewcommand{\kappa}{\mathsf k}
+\newcommand{\Esse}{\mathcal S}
+\newcommand{\Elle}{\mathtt L}
+\newcommand{\Ee}{\mathtt E}
+\newcommand{\enne}{\mathfrak n}
+\newcommand{\di}{\mathtt d}
+\newcommand{\Enne}{\mathcal N}
+\newcommand{\emme}{\mathfrak m}
+\newcommand{\elle}{\mathnormal l}
+%##############################################################################################################################
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	tabsize=2,
+	numbers=left,
+	xleftmargin=\parindent,
+	language=C++,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily\scriptsize,
+	keywordstyle=\bf,
+	commentstyle=\textit,
+%	identifierstyle=\color{blue},
+%	stringstyle=\color{orange},
+}
+
+\comment{
+\definecolor{chaptercolor}{gray}{0.8}
+% helper macros
+\newcommand\numlifter[1]{\raisebox{-2cm}[0pt][0pt]{\smash{#1}}}
+\newcommand\numindent{\kern37pt}
+\newlength\chaptertitleboxheight
+\makechapterstyle{hansen}{
+  \renewcommand\printchaptername{\raggedleft}
+  \renewcommand\printchapternum{%
+    \begingroup%
+    \leavevmode%
+   \chapnumfont%
+    \strut%
+    \numlifter{\thechapter}%
+    \numindent%
+\endgroup%
+}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\begingroup%
+      \leavevmode%
+      \chapnumfont%
+      \numlifter{\vphantom{9}}%
+      \numindent%
+      \endgroup}
+    \afterchapternum}
+  \setlength\midchapskip{0pt}
+  \setlength\beforechapskip{0.5\baselineskip}
+  \setlength{\afterchapskip}{3\baselineskip}
+  \renewcommand\chapnumfont{%
+    \fontsize{4cm}{3cm}%
+    \bfseries%
+    \sffamily%
+    \color{chaptercolor}%
+  }
+  \renewcommand\chaptitlefont{%
+    \normalfont%
+    \huge%
+    \bfseries%
+    \raggedleft%
+  }%
+  \settototalheight\chaptertitleboxheight{%
+    \parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}}
+  \renewcommand\printchaptertitle[1]{%
+    \parbox[t][\chaptertitleboxheight][t]{\textwidth}{%
+      %\microtypesetup{protrusion=false}% add this if you use microtype
+      \chaptitlefont\strut ##1\strut}%
+}}
+\chapterstyle{hansen}
+%\aliaspagestyle{chapter}{empty} % just to save some space
+}
+%############################################################################
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\itshape\thepage}
+\fancyhead[RE]{\itshape\footnotesize\nouppercase{\leftmark}}
+\fancyhead[LO]{\itshape\footnotesize\nouppercase{\rightmark}}
+%##############################################################################################################################
+\begin{document}
+	\pagenumbering{roman}
+\title{\huge \textbf{Models for hierarchical inheritance structures in object-oriented programming languages}}
+\author{Mariacristina Romano\\
+Dipartimento di Fisica, Universit\`a degli Studi di Milano,\\
+Via Celoria 16, 20133 Milano, Italia}
+%---------------------------------------------------------
+\include {frontespizio} % qui include il frontespizio
+\date{April 15, 2015}
+\newpage\null\thispagestyle{empty}\newpage %pagina bianca dopo il mio frontespizio
+\thispagestyle{empty}
+%---------------------------------------------------------
+%\begin{flushright}
+%\null\vspace{\stretch{1}}
+%{\textit{A me}}
+%\vspace{\stretch{2}}\null
+%\end{flushright}
+%---------------------------------------------------------
+%\newpage\null\thispagestyle{empty}\newpage
+\maketitle
+\newpage\null\thispagestyle{empty}\newpage
+%---------------------------------------------------------
+\begin{abstract}
+\center
+Object-oriented programming languages allow developers to write software in which \textit{objects} have different kinds of relations and interactions: a complex system!
+
+\vspace{0.5cm}
+The object paradigm states a list of rules which facilitate the code re-use. Probably the most important mechanism that leads to a minimal effort is the inheritance relation.
+
+\vspace{0.5cm}
+Inheritance allows the construction of multilevel hierarchies, which can be modeled by directed acyclic graphs.
+
+\vspace{0.5cm}
+How do programmers use inheritance? Which kind of graphs arise from hierarchical relations? What quantity governs the optimization?
+
+\vskip1.75cm
+\hskip4.5cm
+\parbox[b]{7cm}
+{
+Advisor: {\textit Prof. Mario Raciti}\\
+Co-advisor: {\textit Prof. Marco Gherardi}
+}
+\end{abstract}
+%--------------------------------------------------------
+\newpage\null\thispagestyle{empty}\newpage
+\tableofcontents
+\newpage\null\thispagestyle{empty}\newpage
+%##############################################################################################################################
+%##############################################################################################################################
+%##############################################################################################################################
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Object-oriented paradigm}
+	\pagenumbering{arabic}
+%******************************************************************************************************************************
+\input{intro.tex}
+%******************************************************************************************************************************
+\newpage
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\chapter{Minimal Effort model}
+	\label{Ceffort}
+%******************************************************************************************************************************
+\input{effort.tex}
+%******************************************************************************************************************************
+\newpage
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\chapter{Sharing Tree model}
+	\label{CTree}
+%******************************************************************************************************************************
+\input{tree.tex}
+%******************************************************************************************************************************
+\newpage
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\chapter{Data analysis}
+	\label{Cdata}
+%******************************************************************************************************************************
+\input{data.tex}
+%******************************************************************************************************************************
+\newpage
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\chapter{Conclusions}
+%******************************************************************************************************************************
+\input{results.tex}
+%******************************************************************************************************************************
+\newpage
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newpage
+\appendix
+\chapter{Source code} 
+%******************************************************************************************************************************
+\input{codice.tex}
+
+\bibliography{biblio}
+\bibliographystyle{alpha}
+
+
+\end{document}
+
+

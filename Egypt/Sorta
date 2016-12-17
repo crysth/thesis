@@ -1,0 +1,11 @@
+#!/bin/bash
+
+input=$(ls S*VS*.dat)
+
+for i in $input
+do
+	output=$(echo $i | sed 's/S//')
+	head -1 $i > $output
+	tail -n +2 $i | sort -n | uniq >> $output
+#	rm $i
+done

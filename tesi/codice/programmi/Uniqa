@@ -1,0 +1,10 @@
+#!/bin/bash
+
+input=$(ls U*.*)
+
+for i in $input
+do
+	output=$(echo $i | sed 's/U//')
+	cat $i | sort -n | uniq -c | awk '{print $2"\t"$1}' > $output
+	rm $i
+done

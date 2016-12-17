@@ -1,0 +1,117 @@
+\section{Library for data analysis}
+\label{libra}
+In this section, some of the classes implemented in the library are listed. Classes omitted are Scatterplot, Lineplot and Distribuzioni that allow a suitable print of data obtainable by the following classes.
+
+\subsection{class Node}
+A class that realize the concept of node.
+\subsubsection{node.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/node.hpp}
+\vspace{0.5cm}
+\subsubsection{node.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/node.cpp}
+\vspace{0.5cm}
+
+\subsection{class Graph}
+The class Graph is central for the library. It allows to obtain all main quantities about a graph, or a tree.
+\subsubsection{graph.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/graph.hpp}
+\vspace{0.5cm}
+\subsubsection{graph.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/graph.cpp}
+\vspace{0.5cm}
+
+\subsection{class Packagegraph}
+This class is a tool that allows to analyze automatically more graphs at the same time.
+\subsubsection{packagegraph.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/packagegraph.hpp}
+\vspace{0.5cm}
+\subsubsection{packagegraph.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/packagegraph.cpp}
+\vspace{0.5cm}
+
+\subsection{class Treemaker}
+This class builds trees and graphs through Sharing Tree model, Pang-Maslov model and Branching Tree model.
+\subsubsection{treemaker.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/treemaker.hpp}
+\vspace{0.5cm}
+\subsubsection{treemaker.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/treemaker.cpp}
+\vspace{0.5cm}
+
+\comment{
+\subsection{class Distribuzioni}
+This class calculates distributions about all main quantities in this analysis.
+\subsubsection{distribuzioni.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/distribuzioni.hpp}
+\vspace{0.5cm}
+\subsubsection{distribuzioni.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/distribuzioni.cpp}
+\vspace{0.5cm}
+
+\subsection{class Scatterplot}
+Scatterplots have a fundamental role in this analysis. This class allows to obtain all scatterplots contained in this thesis.
+\subsubsection{scatterplot.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/scatterplot.hpp}
+\vspace{0.5cm}
+\subsubsection{scatterplot.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/scatterplot.cpp}
+\vspace{0.5cm}
+
+\subsection{class Lineplot}
+While distributions and scatterplots are done for the whole dataset, the class Lineplot allows to obtain an analysis from each graph.
+\subsubsection{treemaker.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/lineplot.hpp}
+\vspace{0.5cm}
+\subsubsection{treemaker.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/lineplot.cpp}
+\vspace{0.5cm}
+
+\subsection{Tools}
+Miscellaneous tools for the library.
+\subsubsection{funzioni.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/funzioni.hpp}
+\vspace{0.5cm}
+\subsubsection{funzioni.cpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/funzioni.cpp}
+\vspace{0.5cm}
+\subsubsection{libreria.hpp}
+\lstinputlisting[language=C++,style=customc]{codice/libreria/libreria.hpp}
+\vspace{0.5cm}
+\subsubsection{Uniqa}
+\lstinputlisting[language=bash,style=customc]{codice/programmi/Uniqa}
+\vspace{0.5cm}
+\subsubsection{Sorta}
+\lstinputlisting[language=bash,style=customc]{codice/programmi/Sorta}
+}
+
+\section{Programs for simulations and analysis}
+
+\subsection{mrmodel.cpp}
+This program use the library to simulate and analyze Sharing Trees.
+\lstinputlisting[language=C++,style=customc]{codice/libreria/mrmodel.cpp}
+\vspace{0.5cm}
+
+\subsection{tarantola.cpp}
+A program to obtain the whole data analysis through the library.
+\lstinputlisting[language=C++,style=customc]{codice/libreria/tarantola.cpp}
+\vspace{0.5cm}
+
+
+\section{Programs for data conversion}
+\label{app}
+Programs in this section are written in gvpr \cite{gvpr}.
+\subsection{Papera.gv}
+A program to paste together the subgraphs produced by doxygen.
+\lstinputlisting[language=awk,style=customc]{codice/script/Papera.gv}
+\vspace{0.5cm}
+
+\subsection{Bilimetta.gv}
+A program to erase templates from graphs.
+\lstinputlisting[language=awk,style=customc]{codice/script/Bilimetta.gv}
+\vspace{0.5cm}
+
+\subsection{Numerello.gv}
+A program to convert .dot files in adjacency lists.
+\lstinputlisting[language=awk,style=customc]{codice/script/Numerello.gv}
+
+

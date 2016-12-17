@@ -1,0 +1,32 @@
+#!/bin/bash
+// gvpr -f prova.gv *.dot | twopi -Txlib
+// Ti voglio bene, Cri
+BEGIN {
+	graph_t out = graph("", "D");
+}
+N {
+	edge_t e = fstin($);
+	node(out, $.label);
+	while(e) {
+		node_t h = e.head;
+		node_t t = e.tail;
+
+		node_t oh = node(out, h.label);
+		node_t ot = node(out, t.label);
+
+		if(isEdge_sg(out,ot,oh,0) != NULL) {
+			edge_t found = isEdge_sg(out,ot,oh,0);
+			if(found.style != e.style)
+				printf("ERRORE:: due stili diversi per lo stesso edge!\n");
+		}
+
+		edge_t oe = edge_sg(out,ot,oh,0);
+		oe.style = e.style;
+		oe.color = e.color;
+		e = nxtin(e);
+
+	}
+}
+END {
+        write(out);
+}

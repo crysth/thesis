@@ -1,0 +1,64 @@
+/* Ciao Cri, ti voglio bene! */
+
+BEG_G {
+	/* prima visito tutti i nodi, poi tutti gli edge! */
+	$tvtype = TV_en;
+	/*copio il grafico iniziale*/
+	graph_t out = clone(NULL,$G);
+}
+/* poi metto tutti gli edge, solo se sia la head che la tail esistono */
+E {
+	if($.color=="orange") {
+
+		edge_t linkOUT = fstout($.head);
+		while(linkOUT) {
+			if(isNode(out, linkOUT.tail.name) != NULL) {
+				if(isNode(out, linkOUT.head.name) != NULL) {
+					if(isEdge_sg(out, isNode(out, linkOUT.tail.name), isNode(out, linkOUT.head.name), 0) != NULL) {
+	        			        delete(out,isEdge_sg(out, isNode(out, linkOUT.tail.name), isNode(out, linkOUT.head.name), 0));
+						if(isNode(out, linkOUT.head.name) != NULL) {
+							if(isNode(out, $.tail.name) != NULL) {
+								edge_sg(out, isNode(out, $.tail.name), isNode(out, linkOUT.head.name), 0);
+							}
+						}
+					}
+				}
+			}
+			linkOUT = nxtout(linkOUT);
+		}
+
+		edge_t linkIN = fstin($.head);
+		while(linkIN) {
+
+
+			/* se c'e' elimina linkIN dal grafo in uscita */
+			if(isNode(out,linkIN.tail.name) != NULL && isNode(out,linkIN.head.name) != NULL) {
+				if(isEdge_sg(out, isNode(out,linkIN.tail.name), isNode(out,linkIN.head.name), 0) != NULL){
+			                delete(out,isEdge_sg(out, isNode(out,linkIN.tail.name), isNode(out,linkIN.head.name), 0));
+					if($.tail!=linkIN.tail) {
+						if(isNode(out, linkIN.tail.name) != NULL) {
+							if(isNode(out, $.tail.name) != NULL) {
+								edge_sg(out,isNode(out, linkIN.tail.name),isNode(out, $.tail.name),0);
+							}
+						}
+					}
+				}
+			}
+
+			linkIN = nxtin(linkIN);
+		}
+
+		if(isNode(out,$.head.name) != NULL){	
+			delete(out, isNode(out,$.head.name));
+		}
+	}
+}
+/* alla fine elimino tutti i nodi che non hanno frecce entranti o uscenti! fatto oggi assieme! */
+END_G {
+//	printf("n: %d e: %d\n", nNodes($), nEdges($));
+}
+END {
+//	printf("n: %d e: %d\n", nNodes(out), nEdges(out));
+	write(out);
+}
+/* Ciao! */

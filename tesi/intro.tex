@@ -1,0 +1,79 @@
+Object-oriented programming is the most used programming paradigm in today software design. It allows an intelligent code reuse through inheritance and polymorphism, and it is probably the only one programming paradigm that allows people to design huge projects with a cooperative effort.
+
+Programs and libraries written in object-oriented languages are composed through the concept of \textit{objects}, which can be seen as modular code, composed by data and methods. Objects can interact with each other and there may be different kinds of relations among them.
+
+Through the concept of objects, the whole set of programs can be seen as a huge complex system, with many small elements which interact and cooperate to achieve the same goal, which is the purpose for which each program has been made.
+
+One of the most important relation that can bind objects is the inheritance: a rule introduced in object-oriented programming languages in order to facilitate and automate the reuse of code.
+
+The relation of inheritance arranges objects in hierarchies: when an object inherits from another one, we can imagine a small graph with two nodes connected by a directed link, for example from the original object to the one which has inherited the code. Then, we can add lots of other objects to such graph, and make it enormous and complex, due to the possibility to inherit code from different objects and due to the fact that there is no limitation in the number of objects that can inherit code from the same object.
+
+Such hierarchies are the starting point of this work.
+
+\section{A little terminology}
+\subsubsection{Class and objects}
+Object is the word used to refer to an instance of a \textit{class}: there may be lots of objects of the same type in a program. In this thesis there is no necessity to distinguish these two concepts and words will be used without distinctions.
+
+\subsubsection{Abstract classes}
+An abstract class is a class that can not be instantiated and so that can never become an object. Such class contains methods that has no implementation, but only a declaration.
+
+\subsubsection{Superclasses and subclasses}
+When a class inherits from another class, the first is called the \textit{superclass} of the second one, while the second is a \textit{subclass} of the first one.
+
+The subclass usually inherits from the superclass its \textit{public code}.
+
+\subsubsection{Multiple Inheritance}
+Multiple inheritance occurs when a subclass has more than one superclass. Many programming languages allow this possibility, like C++ and Python, while in others it is limited (as in Java) or even not allowed.
+
+\subsubsection{Multilevel Inheritance}
+Multilevel inheritance occurs when a subclass has inherited from one (or more) superclass which is itself the subclass of another class.
+
+In all programming languages studied in this thesis, multilevel inheritance is enabled, but there is a way to prevent the inheritance from a class in Java and C++, through a specific keyword inserted in the class that is considered \textit{final} for the hierarchy.
+\newpage
+\section{Object-oriented programming languages}
+There are many object-oriented programming languages, with lots of differences among them but united by the object paradigm. To give a complete overview of inheritance hierarchies, three different programming languages have been analized: C++ \cite{cpp}, Java \cite{java} and Python \cite{python}.
+
+This thesis can not contain a whole course about three programming languages, but it is useful, however, to highlight some important differences, in order to give you the tools to judge the data analysis.
+
+\subsubsection{C++ language}
+Among the three languages, C++ is the oldest and the one which spread the object-oriented paradigm.
+
+It has been designed to improve \textit{C language}, adding features as virtual functions, operator overloading, references, keywords to control the store-free of memory, and, obviously, the object-oriented paradigm.
+
+It is a typed language and it supports multiple inheritance.
+
+\subsubsection{Java language}
+Java has been designed to be a secure and portable programming language.
+
+Its syntax is identical to the one of C++, but its inheritance rules has some peculiarity. Multiple inheritance is not available in the common sense: a class can inherit code from one superclass only, but it can also inherit declarations of functions and variables from any number of a special kind of classes, called \textit{interfaces}.
+
+In general, rules have been created in order to reduce complexity in programs and to keep the code as simple as possible without limiting its capabilities. Some examples are the prohibition to overload operators, the deletion of the instruction \textit{go to} and of the multiple inheritance.
+
+\subsubsection{Python language}
+Python has been designed with the goals of be useful in any purpose and to allow a really fast programming.
+
+The syntax is quite different respect to the other two languages, since its design philosophy is to allow to express concepts in the minimum possible lines of code and since it is strongly dynamically typed.
+
+It allows multiple inheritance as well as C++, without any limitation.
+
+\section{Complex noisy data}
+A complex system analysis always begins from a set of chaotic, complex and noisy data.
+
+Internet is the open-source code home and allows people to obtain a huge amount of libraries and programs in every programming language. The noisy data, which is the subject of the following analysis, has been downloaded from GitHub \cite{gith}, the largest code hoster in the world \cite{gitworld}.
+
+Hierarchical inheritance structures can be easily modeled as directed acyclic graphs, and then the dataset is a huge ensemble of different kinds of graphs.
+
+In graphs terminology, the oudegree of a node is the quantity which describes the number of nodes pointed by a link from such node. Since it describes how many classes inherit from such class, such relation means speciation.
+
+The indegree instead represents the multiple inheritance, and so it describes the number of classes from which the selected class has inherited code.
+
+Another important point is that each program is made to perform a task, and then each hierarchy is done to solve a problem or a subtask of the whole program.
+
+In principle all classes in a hierarchy can be directly used in programs, excluding abstract classes, but only some of these classes becomes real objects, while the other nodes have structural purposes only.
+
+%
+%
+%
+%
+%
+

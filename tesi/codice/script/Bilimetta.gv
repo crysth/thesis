@@ -1,0 +1,46 @@
+BEG_G {
+	$tvtype = TV_en;
+	graph_t out = clone(NULL,$G);
+}
+E {
+	if($.color=="orange") {
+	  edge_t linkOUT = fstout($.head);
+	  while(linkOUT) {
+	    if(isNode(out, linkOUT.tail.name) != NULL) {
+	      if(isNode(out, linkOUT.head.name) != NULL) {
+	        if(isEdge_sg(out, isNode(out, linkOUT.tail.name), isNode(out, linkOUT.head.name), 0) != NULL) {
+	          delete(out,isEdge_sg(out, isNode(out, linkOUT.tail.name), isNode(out, linkOUT.head.name), 0));
+	          if(isNode(out, linkOUT.head.name) != NULL) {
+	            if(isNode(out, $.tail.name) != NULL) {
+	              edge_sg(out, isNode(out, $.tail.name), isNode(out, linkOUT.head.name), 0);
+	            }
+	          }
+	        }
+	      }
+	    }
+	    linkOUT = nxtout(linkOUT);
+	  }
+	  edge_t linkIN = fstin($.head);
+	  while(linkIN) {
+	    if(isNode(out,linkIN.tail.name) != NULL && isNode(out,linkIN.head.name) != NULL) {
+	      if(isEdge_sg(out, isNode(out,linkIN.tail.name), isNode(out,linkIN.head.name), 0) != NULL){
+	        delete(out,isEdge_sg(out, isNode(out,linkIN.tail.name), isNode(out,linkIN.head.name), 0));
+	        if($.tail!=linkIN.tail) {
+	          if(isNode(out, linkIN.tail.name) != NULL) {
+	            if(isNode(out, $.tail.name) != NULL) {
+	              edge_sg(out,isNode(out, linkIN.tail.name),isNode(out, $.tail.name),0);
+	            }
+	          }
+	        }
+	      }
+	    }
+	    linkIN = nxtin(linkIN);
+	  }
+	  if(isNode(out,$.head.name) != NULL){	
+	    delete(out, isNode(out,$.head.name));
+	  }
+	}
+}
+END {
+	write(out);
+}

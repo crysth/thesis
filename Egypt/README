@@ -1,0 +1,56 @@
+________________________________________________________________________________
+
+BINARI
+________________________________________________________________________________
+
+binnaX
+
+binnaXY
+
+fittapowerlaw - fittapowerlaw nomefile
+	accetta solo files di 2 colonne. Fa un fit lineare per trovare i parametri della powerlaw. 
+	(occhio a Nmax)
+
+Histo - Histo nomefile 2 DA CONTROLLARE!!!
+	Crea un istogramma semplice, sommando gli elementi all'interno del bin di dimensione data.
+	Non e' necessario sortare il file in input!
+
+Phisto - Phisto nomefile 2
+	file di input con x e p(x)
+
+________________________________________________________________________________
+
+SCRIPT
+________________________________________________________________________________
+
+BinnaXY - BinnaXY nomefile 2
+	
+
+Uniqa - Uniqa
+	prende tutti i file che cominciano per U, fa un sort -n con uniq -c
+	Il file di input quindi e' a una sola colonna
+
+Sorta - Sorta
+	prende tutti i file che cominciano per S e contengono VS
+	li sorta e li uniqa, cosi' che siano piu' leggeri per i grafici
+
+binna.sh
+
+________________________________________________________________________________
+
+SORGENTI
+________________________________________________________________________________
+
+binnaX.c
+
+binnaXY.c
+
+fittapowerlaw.C
+
+historante.c
+
+historantep.c
+
+
+
+

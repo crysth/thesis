@@ -1,0 +1,18 @@
+BEG_G {
+	printf("0\n");
+	$tvtype = TV_ne;
+	int i = 1;
+}
+
+N {
+	node_t n = $;
+	n.mionome = i;
+	i++;
+}
+
+E {
+	edge_t e = $;
+	node_t h = e.head;
+	node_t t = e.tail;
+	printf("%s %s\n", t.mionome, h.mionome);
+}

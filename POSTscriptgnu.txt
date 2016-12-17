@@ -1,0 +1,51 @@
+set terminal postscript eps enhanced color solid "Helvetica" 16 blacktext
+
+
+gnuplot>
+set view map
+set log cb
+unset key
+plot "mappacpp.dat" matrix with image
+plot "mappacpp.dat" matrix with image
+
+set palette rgbformula -7,2,-7
+set cbrange [0:5]
+set cblabel "Score"
+unset cbtics
+plot $map1 matrix using 1:2:($3 == 0 ? "" : sprintf("%g",$3) ) with labels
+
+$map3 << EOD
+,Apple,Bacon,Cream,Donut,Eclair
+Row 1, 5, 4, 3, 1, 0
+Row 2, 2, 2, 0, 0, 1
+Row 3, 0, 0, 0, 1, 0
+Row 4, 0, 0, 0, 2, 3
+Row 5, 0, 1, 2, 4, 3
+EOD
+
+set datafile separator comma
+plot '$map3' matrix rowheaders columnheaders using 1:2:3 with image
+set datafile separator
+
+default:: set palette rgbformula 7,5,15
+fuego:: set palette model XYZ rgbformula 7,5,15
+
+
+gnuplot> replot
+gnuplot> set xtics add ("10000" log(10000)/log(1.2))
+gnuplot> replot
+gnuplot> set xtics 100000
+gnuplot> replot
+gnuplot> set xtics add ("10000" log(10000)/log(1.2))
+gnuplot> set xtics add ("1000" log(1000)/log(1.2))
+gnuplot> set xtics add ("100" log(100)/log(1.2))
+gnuplot> set xtics add ("10" log(10)/log(1.2))
+gnuplot> set xtics add ("1" 1)
+gnuplot> replot
+gnuplot> save "HdepVSnodes.cpp.gnu"
+gnuplot> set ytics add ("1" 1)
+gnuplot> set ytics add ("10" log(10)/log(1.1))
+gnuplot> replot
+
+uplot> set cblabel  offset  -1, -18 font "" textcolor lt -1 rotate by -270
+
